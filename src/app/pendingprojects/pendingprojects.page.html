@@ -1,0 +1,20 @@
+<ion-header color="primary">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pending Projects</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let PProjects of this.ProjectDetails">
+    <ion-item (click)="ProjectDetailsSingle(PProjects.docid)">
+      <ion-label>
+        <h2>{{PProjects.ProjectNo}}</h2>
+        <p>{{PProjects.date}}</p>
+      </ion-label>
+      <ion-button slot="end" color="success">{{PProjects.Status}}</ion-button>
+    </ion-item>
+    </ion-list>
+</ion-content>

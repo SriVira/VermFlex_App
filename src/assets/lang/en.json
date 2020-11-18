@@ -1,0 +1,19 @@
+{
+    "Login":{
+        
+        "Access_To _Your_Account" : "Access To Your Account",
+        "Login_Email" :"Login Email",
+        "Login_Password":"Login Password",
+        "LoginButton":"Login"
+    },
+
+    "Home":{
+        
+        "Hello!" : "Hello !",
+        "Pending" : "Pending",
+        "Completed" : "Completed",
+        "Recent_Projects" : "Recent Projects"
+    }
+
+
+}

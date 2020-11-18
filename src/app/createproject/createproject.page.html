@@ -1,0 +1,45 @@
+<ion-header color="primary">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>New Project</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <div class="form-group ion-margin">
+
+      <ion-item>
+        <ion-label  position="stacked">Project No :</ion-label>
+        <ion-input [(ngModel)]="ProjectNo" type="text"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Site Name:</ion-label>
+        <ion-input [(ngModel)]="SiteName" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Client Name:</ion-label>
+        <ion-input [(ngModel)]="ClientName" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Construction Site Address:</ion-label>
+        <ion-textarea [(ngModel)]="SiteAddress"></ion-textarea>
+      </ion-item>
+
+      
+      <ion-item>
+        <ion-label position="stacked">Construction Site Plot No:</ion-label>
+        <ion-input type="text" [(ngModel)]="PlotNo"></ion-input>
+      </ion-item>
+
+
+      <ion-button (click)="this.InsertProject()" class="ion-margin-top" expand="full" slot="end">Done</ion-button>
+    </div>
+  
+
+</ion-content>

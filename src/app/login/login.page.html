@@ -1,0 +1,27 @@
+
+<ion-content>
+  <div id="header">
+    <img src="assets/img/small-logo.png" />
+  </div>
+
+  <form id="form">
+    <div id="header">
+      <h6>{{'Login.Access_To _Your_Account' | translate}}</h6>
+    </div>
+
+    <div class="form-group">
+
+      <ion-item>
+        <ion-label  position="stacked">{{'Login.Login_Email' | translate}}</ion-label>
+        <ion-input type="email" #email></ion-input>
+      </ion-item>
+      
+      <ion-item class="ion-margin-top">
+        <ion-label position="stacked">{{'Login.Login_Password' | translate}}</ion-label>
+        <ion-input type="password" #password></ion-input>
+      </ion-item>
+
+    </div>
+    <ion-button (click)="login(email.value,password.value)">{{'Login.LoginButton' | translate}}</ion-button>
+  </form>
+</ion-content>

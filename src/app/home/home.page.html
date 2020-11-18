@@ -1,20 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="ion-text-center">
+    <img src="assets/img/small-logo.png"/>
   </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{'Home.Hello!' | translate}}</ion-card-title>
+      <ion-card-subtitle>{{this.LogEmail}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card class="mt-5">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" class="ion-text-center">
+          <ion-card-subtitle size="small" class="mt-2">{{'Home.Pending' | translate}}</ion-card-subtitle>
+          <ion-button [routerLink]="['/pendingprojects']" routerLinkActive="router-link-active"  expand="full" shape="round" color="primary" class="mt-2"><ion-card-title>{{this.NumberOfProjectsPeding}}</ion-card-title></ion-button>
+        </ion-col>
+        <ion-col size="6" class="ion-text-center">
+          <ion-card-subtitle size="small" class="mt-2">{{'Home.Completed' | translate}}</ion-card-subtitle>
+          <ion-button [routerLink]="['/completedprojects']" routerLinkActive="router-link-active"  expand="full" shape="round" color="primary" class="mt-2"><ion-card-title>{{this.NumberOfProjectsCompleted}}</ion-card-title></ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card class="ion-padding">
+    <ion-card-title>{{'Home.Recent_Projects' | translate}}</ion-card-title>
+    <ion-list *ngFor="let RecentProjectList of this.RecentProjects">
+
+      <ion-item (click)="ProjectDetails(RecentProjectList.docid)" >
+        <ion-label>
+          <h2>{{RecentProjectList.ProjectNo}}</h2>
+          <p>{{RecentProjectList.date}}</p>
+        </ion-label>
+        <ion-button slot="end" color="primary">{{RecentProjectList.Status}}</ion-button>
+      </ion-item>
+ 
+    </ion-list>
+  </ion-card>
+  
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button [routerLink]="['/createproject']" routerLinkActive="router-link-active"  color="primary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -1,27 +1,21 @@
-#container {
-  text-align: center;
+img{
+    width: 50%;
+    border-radius: 0%;
+    border: 8px solid #ffffff;
+    margin-top: 1%;
+  }
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  ion-card{
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+    ion-card-header{
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+      ion-card-title{
+        color: black;
+      }
 
-  color: #8c8c8c;
+      ion-card-subtitle{
+        color: black;
+      }
+    }
 
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
+  }
